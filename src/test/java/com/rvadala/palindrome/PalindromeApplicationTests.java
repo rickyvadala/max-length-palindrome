@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.Assert.assertEquals;
+import static com.rvadala.palindrome.PalindromeApplication.*;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -23,13 +24,13 @@ class PalindromeApplicationTests {
 
     @Test
     void nonePalindrome() {
-        String res = PalindromeApplication.maxPalindrome("?¡0123456789/*-+");
+        String res = maxPalindrome("?¡0123456789/*-+");
         assertEquals(res, "");
     }
 
     @Test
     void aPalindrome() {
-        String res = PalindromeApplication.maxPalindrome("neuquen");
+        String res = maxPalindrome("neuquen");
         assertEquals(res, "neuquen");
     }
 
@@ -42,8 +43,20 @@ class PalindromeApplicationTests {
 
         String palindrome ="lllllooooooooorrrrreeeeeeeeeeemmmmmiiiiiiiippsssssssuuuuuuddddtttttttttttaaaaaacccccnnnnnnggf" +
                         "efggnnnnnncccccaaaaaatttttttttttdddduuuuuusssssssppiiiiiiiimmmmmeeeeeeeeeeerrrrrooooooooolllll";
-        String res = PalindromeApplication.maxPalindrome(text);
+        String res = maxPalindrome(text);
         assertEquals(res, palindrome);
+    }
+
+    @Test
+    void reversedTextPalindrome() {
+        String text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
+                "Donec vitae lorem ut elit sodales feugiat. Nam et justo a nunc " +
+                "posuere commodo quis ut leo. Donec porttitor sagittis nisl, non " +
+                "eleifend magna placerat ut. Mauris id consectetur metus.";
+
+        String res = maxPalindrome(text);
+        StringBuilder builder= new StringBuilder(res);
+        assertEquals(res, builder.reverse().toString());
     }
 
 

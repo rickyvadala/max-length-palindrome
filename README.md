@@ -16,6 +16,3 @@ and not n^3, so in the worst case scenario when the length of
 the input "n" (In this case the quantity of valid Characters 
 in the String) tends toward infinity the time complexity will 
 be O(n^2)
-
-##Code
-
