@@ -14,7 +14,7 @@ public class PalindromeApplication {
 
         SpringApplication.run(PalindromeApplication.class, args);
 
-        String param = "neuquen";
+        String param = "insert string here";
 
         String maxPalindrome = maxPalindrome(param);
 
@@ -48,6 +48,4 @@ public class PalindromeApplication {
         }
         return palindrome.toString().replaceAll("[^a-z]", "");
     }
-
-    // O(n2)
 }
